@@ -42,6 +42,11 @@ class Data{
           return $nombre;
      }
 
+     public function crearUsuario($correo, $clave, $nombre, $permiso){
+          $query = "insert into usuario values (null,'$correo','$clave','$nombre','$permiso');";
+          $this->c->ejecutar($query);
+     }
+
      public function getHeroe(){
           $query = "select nombre from Heroe where id"
 
