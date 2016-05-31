@@ -14,15 +14,9 @@ if (isset($_POST["btnEnviar"])) {
 
 
   header("location: ../menu.php");
-else {
+}else {
   header("location: ../index.php?hackerMan=1");
 
-
 }
-
-
-}
-
-
 
 ?>

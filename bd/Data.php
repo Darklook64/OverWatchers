@@ -1,4 +1,5 @@
 <?php
+require_once "Conexion.php";
 class Data{
      private $c;
 
@@ -47,6 +48,7 @@ class Data{
           $this->c->ejecutar($query);
      }
 
+<<<<<<< HEAD
      public function listarUsuario(){
           $query = "select u.id, u.nombre, u.correo, p.permiso as 'Permiso'
           from usuario u, permiso p
@@ -82,9 +84,12 @@ class Data{
      // Héroes
 
      public function getHeroe(){
+=======
+     /*public function getHeroe(){
+>>>>>>> ca03f6ed779519283704046e7facc49fcbf14d02
           $query = "select nombre from Heroe where id"
 
-     }
+     }*/
 
 
 }

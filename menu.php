@@ -11,7 +11,8 @@
     $d= new Data();
     switch ($idPermiso) {
       case 1:
-        
+        echo "<h1>Listado de usuarios</h1>";
+        $d->listarUsuarios();
         break;
 
       case 2:
