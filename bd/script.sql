@@ -25,6 +25,8 @@ create table usuario(
 insert into usuario values (null, 'germinze@gmail.com','ilovedibujo','Germán Muñóz',1);
 insert into usuario values (null, 'jrcortest1@gmail.com','undertalefan1','José Cortés',1);
 insert into usuario values (null, 'byron@gmail.com','byronmalote','Bryan Bravo',1);
+insert into usuario values (null, 'hola@gmail.com','hola','Hola Hola',2);
+
 
 create table rol(
 	id int auto_increment,

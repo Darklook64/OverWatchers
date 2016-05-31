@@ -24,6 +24,27 @@
 
 
     </form>
-    <?php  ?>
+    <?php
+    if (isset($_GET["hackerMan"])) {
+        $m= $_GET["hackerMan"];
+
+        switch($m){
+          case 1:
+            echo "Ingreso Restringido";
+            break;
+          case 2:
+            echo "Ingreso Restringido";
+            break;
+          case 3:
+            echo "Ingreso Restringido";
+            break;
+
+
+        }
+    }
+
+
+
+    ?>
   </body>
 </html>
