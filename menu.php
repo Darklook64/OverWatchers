@@ -1,4 +1,25 @@
 <!DOCTYPE html>
+<?php
+session_start();
+
+if(!isset($_SESSION["idPermiso"])){
+    header("location: index.php?hackerMan=2");
+}else{
+    $idPermiso = $_SESSION["idPermiso"];
+    $nombre =$_SESSION["nombre"];
+    if($idPermiso == 0){
+        session_destroy();
+        header("location: index.php?hackerMan=3");
+    }
+
+
+}
+?>
+
+
+
+
+
 <html>
   <head>
     <meta charset="utf-8">
@@ -11,8 +32,7 @@
     $d= new Data();
     switch ($idPermiso) {
       case 1:
-        echo "<h1>Listado de usuarios</h1>";
-        $d->listarUsuarios();
+        $d->listarUsuario();
         break;
 
       case 2:

@@ -6,8 +6,8 @@ if (isset($_POST["btnEnviar"])) {
   $pass=$_POST["txtPass"];
 
   $d= new Data();
-  $idPermiso=$idPermiso->getPermiso($correo,$pass);
-  $nombre=$nombre->getNombre($correo,$pass);
+  $idPermiso=$d->getPermiso($correo,$pass);
+  $nombre=$d->getNombre($correo,$pass);
   session_start();
   $_SESSION["idPermiso"]=$idPermiso;
   $_SESSION["nombre"]=$nombre;

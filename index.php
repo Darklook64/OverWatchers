@@ -36,7 +36,7 @@
             echo "Ingreso Restringido";
             break;
           case 3:
-            echo "Ingreso Restringido";
+            echo "Clave o correo Incorrectos";
             break;
 
 
