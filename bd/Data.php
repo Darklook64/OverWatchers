@@ -1,4 +1,5 @@
 <?php
+require_once "Conexion.php";
 class Data{
      private $c;
 
@@ -47,10 +48,10 @@ class Data{
           $this->c->ejecutar($query);
      }
 
-     public function getHeroe(){
+     /*public function getHeroe(){
           $query = "select nombre from Heroe where id"
 
-     }
+     }*/
 
 
 }
