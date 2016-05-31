@@ -1,6 +1,5 @@
 <?php
 require_once "Conexion.php";
-require_once "../model/Heroe.php";
 class Data{
      private $c;
 
@@ -36,7 +35,7 @@ class Data{
           and password = '$clave';";
 
           $rs = $this->c->ejecutar($query);
-          $nombre = "null";
+          $nombre = null;
           if($reg = mysql_fetch_array($rs)){
                $nombre = $reg[0];
           }
@@ -89,17 +88,82 @@ class Data{
           $this->$c->ejecutar($query);
      }
 
-     
+     public function getNombreHeroe($id){
+          $query = "select nombre
+          from heroes
+          where id = $id";
 
+          $rs = $this->c->ejecutar($query);
 
+          $nombre = null;
 
-     // Héroes
+          if($reg = mysql_fetch_array($rs)){
+               $nombre = $reg[0];
+          }
 
-     /*public function getHeroe(){
->>>>>>> ca03f6ed779519283704046e7facc49fcbf14d02
-          $query = "select nombre from Heroe where id"
+          return $nombre;
+     }
+     public function getRol($id){
+          $query = "select r.rol
+          from rol r, heroes h
+          where r.id = h.rol AND h.id = $id";
 
-     }*/
+          $rs = $this->c->ejecutar($query);
+
+          $rol = null;
+
+          if($reg = mysql_fetch_array($rs)){
+               $rol = $reg[0];
+          }
+
+          return $rol;
+     }
+
+     public function getDificultad($id){
+          $query = "select d.dificultad
+          from dificultad d, heroes h
+          where d.id = h.dificultad AND h.id = $id";
+
+          $rs = $this->c->ejecutar($query);
+
+          $dificultad = null;
+
+          if($reg = mysql_fetch_array($rs)){
+               $dificultad = $reg[0];
+          }
+
+          return $dificultad;
+     }
+
+     public function listarHeroes(){
+          $query = "select h.id, h.nombre, r.rol as 'Rol',
+          d.dificultad as 'Dificultad'
+          from heroes h, rol r, dificultad d
+          where h.rol = r.id and h.dificultad = d.id order by h.nombre asc;";
+
+          $rs = $this->c->ejecutar($query);
+          echo "<h1>Listado de Usuarios</h1>";
+
+          echo "<table border='1'>";
+          echo "<tr>";
+              echo "<th>ID</th>";
+              echo "<th>Nombre</th>";
+              echo "<th>Correo</th>";
+              echo "<th>Permiso</th>";
+              echo "<th>Eliminar</th>";
+          echo "</tr>";
+          while($reg= mysql_fetch_array($rs)){
+            echo "<tr>";
+              echo "<td>$reg[0]</td>";
+              echo "<td>$reg[1]</td>";
+              echo "<td>$reg[2]</td>";
+              echo "<td>$reg[3]</td>";
+              echo "<td><a href='controlador/eliminarUsuario.php?id=$reg[0]'>Eliminar</a></td>";
+            echo "</tr>";
+
+          }
+          echo "</table>";
+     }
 
 
 }
