@@ -11,7 +11,7 @@
     $d= new Data();
     switch ($idPermiso) {
       case 1:
-
+        
         break;
 
       case 2:

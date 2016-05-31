@@ -10,6 +10,7 @@ if (isset($_POST["btnEnviar"])) {
   $nombre=$nombre->getNombre($correo,$pass);
   session_start();
   $_SESSION["idPermiso"]=$idPermiso;
+  $_SESSION["nombre"]=$nombre;
 
 
   header("location: ../menu.php");
