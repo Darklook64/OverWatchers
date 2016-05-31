@@ -22,14 +22,32 @@ class Data{
 
           $idPermiso = 0;
 
-          /* Si existe algún registro */
           if($reg = mysql_fetch_array($rs)){
                $idPermiso = $reg[0];
           }
 
           return $idPermiso;
+     }
+
+     public function getNombre ($correo, $clave){
+          $query = "select nombre from usuario where correo = '$correo'
+          and password = '$clave';";
+
+          $rs = $this->c->ejecutar($query);
+          $nombre = "null";
+          if($reg = mysql_fetch_array($rs)){
+               $nombre = $reg[0];
+          }
+
+          return $nombre;
+     }
+
+     public function getHeroe(){
+          $query = "select nombre from Heroe where id"
 
      }
+
+
 }
 
 ?>
