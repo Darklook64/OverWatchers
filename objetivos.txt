@@ -1,0 +1,21 @@
+INTEGRANTES:
+	-Jose Cortes(Back-end);
+	-Bryan Bravo(DFE);
+	-German Muñoz(D);
+
+NOMBRE DEL SOFTWARE : Crud OverWatcher
+
+-OBJETIVOS:
+	-Usuario y login (Administrador,Normal);
+	-Listar los heroes;
+	-Ingresar mas heroes;
+	-Actualizar estados de los heroes;
+	-Eliminar Entradas;
+	-Buscar Heroe;
+	
+
+CRUD: USUARIOS;
+	-Registrar Usuarios(como administrador)
+	-Dar dominio para ser administrador;
+	-Borrar o banear un usuario
+	-listar a los usuarios ((((con su principal(OPTIONAL)))))
