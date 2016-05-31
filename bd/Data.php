@@ -1,5 +1,6 @@
 <?php
 require_once "Conexion.php";
+require_once "../model/Heroe.php";
 class Data{
      private $c;
 
@@ -17,7 +18,7 @@ class Data{
           from permiso p, usuario u
           where p.id = u.permiso and
           u.correo = '$correo'
-          and u.clave = '$pass';";
+          and u.clave = '$clave';";
 
           $rs = $this->c->ejecutar($query);
 
@@ -48,12 +49,11 @@ class Data{
           $this->c->ejecutar($query);
      }
 
-<<<<<<< HEAD
      public function listarUsuario(){
           $query = "select u.id, u.nombre, u.correo, p.permiso as 'Permiso'
           from usuario u, permiso p
           where u.permiso = p.id
-          order by u.nombre asc;";
+          order by u.id asc;";
 
           $rs = $this->c->ejecutar($query);
           echo "<h1>Listado de Usuarios</h1>";
@@ -72,19 +72,29 @@ class Data{
               echo "<td>$reg[1]</td>";
               echo "<td>$reg[2]</td>";
               echo "<td>$reg[3]</td>";
-              echo "<td><a href='controlador/eliminar.php?id=$reg[0]'>Delete</a></td>";
+              echo "<td><a href='controlador/eliminarUsuario.php?id=$reg[0]'>Eliminar</a></td>";
             echo "</tr>";
 
           }
           echo "</table>";
      }
 
+     public function eliminarUsuario ($id){
+          $query = "delete from usuario where id = $id";
+          $this->$c->ejecutar($query);
+     }
+
+     public function crearHeroe($nombre,$rol,$dificultad){
+          $query = "insert into heroes values (null,'$nombre','$rol','$dificultad');";
+          $this->$c->ejecutar($query);
+     }
+
+     
+
 
 
      // Héroes
 
-     public function getHeroe(){
-=======
      /*public function getHeroe(){
 >>>>>>> ca03f6ed779519283704046e7facc49fcbf14d02
           $query = "select nombre from Heroe where id"
