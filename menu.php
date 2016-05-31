@@ -5,6 +5,11 @@
     <title>Menu</title>
   </head>
   <body>
-    
+    <h1>Bienvenido</h1>
+    <?php
+
+
+
+     ?>
   </body>
 </html>
