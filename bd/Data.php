@@ -142,15 +142,14 @@ class Data{
           where h.rol = r.id and h.dificultad = d.id order by h.nombre asc;";
 
           $rs = $this->c->ejecutar($query);
-          echo "<h1>Listado de Usuarios</h1>";
+          echo "<h1>Listado de Héroes</h1>";
 
           echo "<table border='1'>";
           echo "<tr>";
               echo "<th>ID</th>";
               echo "<th>Nombre</th>";
-              echo "<th>Correo</th>";
-              echo "<th>Permiso</th>";
-              echo "<th>Eliminar</th>";
+              echo "<th>Rol</th>";
+              echo "<th>Dificultad</th>";
           echo "</tr>";
           while($reg= mysql_fetch_array($rs)){
             echo "<tr>";
@@ -158,7 +157,6 @@ class Data{
               echo "<td>$reg[1]</td>";
               echo "<td>$reg[2]</td>";
               echo "<td>$reg[3]</td>";
-              echo "<td><a href='controlador/eliminarUsuario.php?id=$reg[0]'>Eliminar</a></td>";
             echo "</tr>";
 
           }
