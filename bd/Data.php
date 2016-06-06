@@ -1,5 +1,20 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+      <link href="../css/main.css" rel="stylesheet">
+  </head>
+
+  <body>
+
+  </body>
+</html>
+
 <?php
 require_once "Conexion.php";
+
+
 
 class Data{
      private $c;
@@ -57,9 +72,7 @@ class Data{
           order by u.id asc;";
 
           $rs = $this->c->ejecutar($query);
-          echo "<h1>Listado de Usuarios</h1>";
-
-          echo "<table border='1'>";
+          echo "<table class='tablaRequerida'border='1'>";
           echo "<tr>";
               echo "<th>ID</th>";
               echo "<th>Nombre</th>";
@@ -81,11 +94,11 @@ class Data{
      }
 
      public function eliminarUsuario ($id,$permiso){
-          if($permiso == 1){
-          $query = "delete from usuario where id = $id";
-          $this->c->ejecutar($query);
-        }
-     }
+           if($permiso == 1){
+           $query = "delete from usuario where id = $id";
+           $this->c->ejecutar($query);
+         }
+      }
 
      public function crearHeroe($nombre,$rol,$dificultad){
           $query = "insert into heroes values (null,'$nombre','$rol','$dificultad');";
@@ -116,7 +129,7 @@ class Data{
               echo $reg[3];
               echo "<hr>";
               echo "<h2>Imagen</h2>";
-              echo $reg[4];
+              echo "<img src='../heroes/$reg[4]' alt='chupa el perro' />";
               echo "<hr>";
 
           }
@@ -164,34 +177,34 @@ class Data{
      }
 
      public function listarHeroes(){
-          $query = "select h.id, h.nombre, r.rol as 'Rol',
-          d.dificultad as 'Dificultad'
-          from heroes h, rol r, dificultad d
-          where h.rol = r.id and h.dificultad = d.id order by h.nombre asc;";
+       $query = "select h.id, h.nombre, r.rol as 'Rol',
+       d.dificultad as 'Dificultad'
+       from heroes h, rol r, dificultad d
+       where h.rol = r.id and h.dificultad = d.id order by h.nombre asc;";
 
-          $rs = $this->c->ejecutar($query);
-          echo "<h1>Listado de Héroes</h1>";
+       $rs = $this->c->ejecutar($query);
 
-          echo "<table border='1'>";
-          echo "<tr>";
-              echo "<th>ID</th>";
-              echo "<th>Nombre</th>";
-              echo "<th>Rol</th>";
-              echo "<th>Dificultad</th>";
-          echo "</tr>";
-          while($reg= mysql_fetch_array($rs)){
-            echo "<tr>";
-              echo "<td>$reg[0]</td>";
-              echo "<td>$reg[1]</td>";
-              echo "<td>$reg[2]</td>";
-              echo "<td>$reg[3]</td>";
-            echo "</tr>";
+       echo "<table border='3'  WIDTH=310 >";
+       echo "<tr>";
+           echo "<th>ID</th>";
+           echo "<th>Nombre</th>";
+           echo "<th>Rol</th>";
+           echo "<th>Dificultad</th>";
+       echo "</tr>";
+       while($reg= mysql_fetch_array($rs)){
+         echo "<tr>";
+           echo "<td>$reg[0]</td>";
+           echo "<td>$reg[1]</td>";
+           echo "<td>$reg[2]</td>";
+           echo "<td>$reg[3]</td>";
+         echo "</tr>";
 
-          }
-          echo "</table>";
-     }
-
-
+       }
+       echo "</table>";
+  }
 }
+
+
+
 
 ?>
