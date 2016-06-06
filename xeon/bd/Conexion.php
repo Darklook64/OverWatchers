@@ -14,6 +14,7 @@ class Conexion{
           if(!$sBD){
                die("Error al seleccionar: ".mysql_error());
           }
+          mysql_query("SET NAMES utf8mb4");
      }
 
      public function ejecutar($query){

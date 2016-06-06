@@ -1,7 +1,8 @@
 @import url(http://fonts.googleapis.com/css?family=Open+Sans:400,300,700);
 body {
   background: #e5e5e5;
-  color: #999;
+  font-family: sans-serif;
+  color: darkred
 }
 h1,
 h2,
@@ -12,6 +13,12 @@ h6 {
   color: #777;
   font-weight: 300;
 }
+
+
+
+}
+
+
 a {
   color: #52b6ec;
   -webkit-transition: 300ms;
@@ -302,6 +309,19 @@ a:focus {
   -o-transition-duration: 0s;
   transition-duration: 0s;
 }
+.tablaRequeridad{
+  margin-left: 300px;
+  width: 500px;
+  border: 3;
+
+
+}
+.tablaRequerida{
+  margin-left: 300px;
+
+}
+
+
 /* End: Recommended Isotope styles */
 /* disable CSS transitions for containers with infinite scrolling*/
 .isotope.infinite-scrolling {
