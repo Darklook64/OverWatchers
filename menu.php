@@ -32,7 +32,12 @@ if(!isset($_SESSION["idPermiso"])){
     $d= new Data();
     switch ($idPermiso) {
       case 1:
+        echo "<form  action='controlador/buscarHeroe.php' method='post'>";
+        echo "<input type='text' name='txtBuscarHeroe' placeholder='Buscar heroe'>";
+        echo "<input type='submit' name='btnBuscar' value='Buscar'>";
+        echo '</form>';
         $d->listarUsuario();
+        $d->listarHeroes();
         break;
 
       case 2:
@@ -46,4 +51,10 @@ if(!isset($_SESSION["idPermiso"])){
 
      ?>
   </body>
+
+
+
+
+
+
 </html>

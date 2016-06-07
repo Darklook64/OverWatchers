@@ -88,21 +88,45 @@ class Data{
           $this->$c->ejecutar($query);
      }
 
-     public function getNombreHeroe($id){
-          $query = "select nombre
+     public function getNombreHeroe($nombre){
+          $query = "select *
           from heroes
-          where id = $id";
+          where nombre = '$nombre'";
 
           $rs = $this->c->ejecutar($query);
 
           $nombre = null;
+          $rol=null;
+          $dificultad=null;
 
           if($reg = mysql_fetch_array($rs)){
-               $nombre = $reg[0];
+              echo "<h1>Heroe</h1>";
+              echo "<hr>";
+              echo "<h3>Nombre</h3>";
+              echo $reg[1];
+              echo "<hr>";
+              echo "<h3>Rol</h3>";
+              echo $reg[2];
+              echo "<hr>";
+              echo "<h3>Dificultad</h2>";
+              echo $reg[3];
+              echo "<hr>";
+              echo "<h2>Imagen</h2>";
+              echo $reg[4];
+              echo "<hr>";
+
           }
 
-          return $nombre;
+
+
+
      }
+
+
+
+
+
+
      public function getRol($id){
           $query = "select r.rol
           from rol r, heroes h
