@@ -1,5 +1,6 @@
 <?php
 require_once "Conexion.php";
+
 class Data{
      private $c;
 
@@ -10,6 +11,7 @@ class Data{
           "root",
           ""
           );
+
      }
 
      public function getPermiso($correo, $clave){
@@ -80,12 +82,12 @@ class Data{
 
      public function eliminarUsuario ($id){
           $query = "delete from usuario where id = $id";
-          $this->$c->ejecutar($query);
+          $this->c->ejecutar($query);
      }
 
      public function crearHeroe($nombre,$rol,$dificultad){
           $query = "insert into heroes values (null,'$nombre','$rol','$dificultad');";
-          $this->$c->ejecutar($query);
+          $this->c->ejecutar($query);
      }
 
      public function getNombreHeroe($nombre){
