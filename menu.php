@@ -50,6 +50,8 @@ if(!isset($_SESSION["idPermiso"])){
 
 
      ?>
+
+     <a href="controlador/cerrarSesion.php">Cerrar Sesión</a>
   </body>
 
 
