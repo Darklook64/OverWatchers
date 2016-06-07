@@ -1,14 +1,17 @@
-create database db_overwatchers;
+create database db_overwatchers
+	default character set utf8
+    default collate utf8_general_ci;
+    
 use db_overwatchers;
+
+SET NAMES 'utf8';
+
 
 create table permiso(
 	id int,
     permiso varchar(30),
     primary key(id)
 )default charset=utf8 ;
-
-
-
 
 insert into permiso values (1, 'Administrador');
 insert into permiso values (2, 'Estándar');
@@ -27,7 +30,7 @@ create table usuario(
 insert into usuario values (null, 'germinze@gmail.com','ilovedibujo','Germán Muñóz',1);
 insert into usuario values (null, 'jrcortest1@gmail.com','undertalefan1','José Cortés',1);
 insert into usuario values (null, 'byron@gmail.com','byronmalote','Bryan Bravo',1);
-insert into usuario values (null, 'hola@gmail.com','hola','Hola Hola',2);
+insert into usuario values (null, 'visitante@gmail.com','visiman','Señor Visita',2);
 
 
 create table rol(
@@ -46,6 +49,7 @@ create table dificultad(
     dificultad varchar(15),
     primary key(id)
 )default charset = utf8;
+
 
 insert into dificultad values(null, 'Fácil');
 insert into dificultad values(null, 'Moderado');
