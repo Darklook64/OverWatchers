@@ -5,7 +5,4 @@ class Heroe{
     public $rol;
     public $dificultad;
     public $imagen;
-}
-
-
 ?>

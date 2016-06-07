@@ -80,9 +80,11 @@ class Data{
           echo "</table>";
      }
 
-     public function eliminarUsuario ($id){
+     public function eliminarUsuario ($id,$permiso){
+          if($permiso == 1){
           $query = "delete from usuario where id = $id";
           $this->c->ejecutar($query);
+        }
      }
 
      public function crearHeroe($nombre,$rol,$dificultad){
