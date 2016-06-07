@@ -1,12 +1,14 @@
 create database db_overwatchers;
 use db_overwatchers;
 
-
 create table permiso(
 	id int,
     permiso varchar(30),
     primary key(id)
-);
+)default charset=utf8 ;
+
+
+
 
 insert into permiso values (1, 'Administrador');
 insert into permiso values (2, 'Estándar');
@@ -19,7 +21,7 @@ create table usuario(
     permiso int,
     foreign key(permiso) references permiso(id),
     primary key(id)
-);
+)default charset = utf8;
 
 
 insert into usuario values (null, 'germinze@gmail.com','ilovedibujo','Germán Muñóz',1);
@@ -32,7 +34,7 @@ create table rol(
 	id int auto_increment,
     rol varchar(15),
     primary key(id)
-);
+)default charset = utf8;
 
 insert into rol values(null,'Ofensa');
 insert into rol values(null,'Defensa');
@@ -43,7 +45,7 @@ create table dificultad(
 	id int auto_increment,
     dificultad varchar(15),
     primary key(id)
-);
+)default charset = utf8;
 
 insert into dificultad values(null, 'Fácil');
 insert into dificultad values(null, 'Moderado');
@@ -59,7 +61,7 @@ create table heroes(
     foreign key(rol) references rol(id),
     foreign key(dificultad) references dificultad(id),
     primary key(id)
-);
+)default charset = utf8;
 
 insert into heroes values(null, 'Bastion',2, 1,'bastion.png');
 insert into heroes values(null, 'D.Va',2,2,'d.va.png');
